@@ -1,7 +1,11 @@
 import React from 'react';
 import {
-    HomeIcon, ExploreIcon, NotificationIcon, MessageIcon, ProfileIcon, MoreIcon, MediaIcon,
-    GifIcon, StatisticIcon, EmojiIcon, PlanIcon
+    HomeIcon,
+    ExploreIcon,
+    NotificationIcon,
+    MessageIcon,
+    ProfileIcon,
+    MoreIcon
 } from "../icons/icons";
 
 const Sidebar = () => {
@@ -13,12 +17,6 @@ const Sidebar = () => {
             <MessageIcon/>
             <ProfileIcon/>
             <MoreIcon/>
-            <MediaIcon/>
-            <GifIcon/>
-            <StatisticIcon/>
-            <EmojiIcon/>
-            <PlanIcon/>
-
         </div>
     );
 }
