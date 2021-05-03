@@ -1,11 +1,16 @@
 import React from "react";
+import Container from "./Layout/Container";
+import Sidebar from "./Layout/Sidebar";
+import Content from "./Layout/Content";
+import Widget from "./Layout/Widget";
 
 const App = () => {
     return (
-        <div className="max-w-7xl">
-            <h1 className="bg-primary-dark">App</h1>
-            <h1 className="bg-primary-dark">App</h1>
-        </div>
+        <Container>
+            <Sidebar/>
+            <Content/>
+            <Widget/>
+        </Container>
     );
 };
 
