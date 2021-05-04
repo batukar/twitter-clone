@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {
     HomeIcon,
     ExploreIcon,
@@ -7,16 +7,62 @@ import {
     ProfileIcon,
     MoreIcon
 } from "../icons/icons";
+import logo from '../images/twitter.svg';
+import SideLink from "../Components/SideLink";
+import UserBox from "../Components/UserBox";
+
+const sideLinks = [
+    {
+        name: 'Home',
+        icon: HomeIcon,
+    },
+    {
+        name: 'Explore',
+        icon: ExploreIcon,
+    },
+    {
+        name: 'Notification',
+        icon: NotificationIcon,
+    },
+    {
+        name: 'Message',
+        icon: MessageIcon,
+    },
+    {
+        name: 'Profile',
+        icon: ProfileIcon,
+    },
+    {
+        name: 'More',
+        icon: MoreIcon,
+    }
+]
+
+
 
 const Sidebar = () => {
+    const[active, setActive] = useState('Home');
+
+    const handleMenuItemClick = (name) => {
+        setActive(name)
+    }
+
     return (
-        <div className='w-72 bg-primary-light'>Sidebar
-            <HomeIcon/>
-            <ExploreIcon/>
-            <NotificationIcon/>
-            <MessageIcon/>
-            <ProfileIcon/>
-            <MoreIcon/>
+        <div className='flex flex-col justify-between w-72 px-2 pt-2'>
+            <div>
+                <div className='mt-1 mb-4 ml-1 hover:bg-grey-lightest flex items-center justify-center
+                    w-12 h-12 rounded-full transition cursor-pointer'>
+                    <img className='w-9 h-9' src={logo} alt='logo'/>
+                </div>
+                <nav className='mb-4'>
+                    <ul>{sideLinks.map(item => (
+                        <SideLink key={item.name} name={item.name} Icon={item.icon} active={active} onMenuItemClick={handleMenuItemClick}/>
+                    ))}</ul>
+                </nav>
+                <button className='bg-primary-base text-white rounded-full py-3 px-8 w-11/12 shadow-lg
+                    hover:bg-primary-dark transform transition-colors duration-400'>Tweet</button>
+            </div>
+            <UserBox/>
         </div>
     );
 }
