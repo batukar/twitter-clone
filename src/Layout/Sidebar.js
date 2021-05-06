@@ -38,8 +38,6 @@ const sideLinks = [
     }
 ]
 
-
-
 const Sidebar = () => {
     const[active, setActive] = useState('Home');
 
